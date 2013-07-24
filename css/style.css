@@ -1,0 +1,388 @@
+/* =Base, reset, normalize
+-----------------------------------------------------------------------------*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-style: normal;
+}
+/* Structure tags */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+/* Responsive images and other embedded objects */
+img,
+object,
+embed,
+video,
+iframe {
+  width: auto;
+  max-width: 100%;
+}
+/* Responsive images aspeсt ratio */
+img,
+video,
+iframe {
+  height: auto;
+}
+/* To prevent some browsers from inserting quotes on q and p */
+blockquote,
+q {
+  quotes: none;
+}
+blockquote p:before,
+blockquote p:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  font-weight: normal;
+}
+thead th,
+thead td {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+/* Image inside */
+a img,
+th img,
+td img {
+  vertical-align: top;
+}
+/* Webkit browsers reset margin */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+textarea {
+  overflow: auto;
+}
+/* Normalize buttons in IE */
+button {
+  width: auto;
+  overflow: visible;
+}
+/* Hand cursor on clickable controls */
+input[type=button],
+input[type=submit],
+button {
+  cursor: pointer;
+}
+/* Trick with vertical align for radio and checkbox  */
+input[type="radio"],
+input[type="checkbox"] {
+  font-size: 110%;
+}
+/* Horizontal rule reset  */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+/* Clearfix */
+.group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/*
+
+FONTELLO
+
+ */
+
+@font-face {
+   font-family: 'fontello';
+   src: url('font/fontello.eot?21970650');
+   src: url('font/fontello.eot?21970650#iefix') format('embedded-opentype'),
+        url('font/fontello.woff?21970650') format('woff'),
+        url('font/fontello.ttf?21970650') format('truetype'),
+        url('font/fontello.svg?21970650#fontello') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+   font-family: "fontello";
+   font-style: normal;
+   font-weight: normal;
+   speak: none;
+
+   display: inline-block;
+   text-decoration: inherit;
+   width: 1em;
+   margin-right: .2em;
+   text-align: center;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1em;
+   margin-left: .2em;
+
+}
+
+.icon-link:before { content: '\e800'; } /* '' */
+
+/*
+
+Styles
+
+ */
+
+html {
+    background: #2C3E50;
+    font-family: 'Lato', Helvetica, sans-serif;
+}
+
+.b-colors-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.b-colors-container__m-vertical {
+    position: relative;
+}
+
+.b-add-color {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 50px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.4);
+}
+.b-add-color:hover {
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+.b-add-color span {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.b-scheme-link {
+    position: fixed;
+    top: 4px;
+    left: 4px;
+    z-index: 4;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 16px;
+    line-height: 29px;
+}
+.b-scheme-link:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.b-clipboard-textarea {
+    width: 200px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+.b-link-modal {
+    position: fixed;
+    top: 38px;
+    left: 4px;
+    z-index: 100;
+    display: none;
+}
+
+.b-color {
+    position: relative;
+    float: left;
+    min-width: 171px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Webkit */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10  */
+    -o-user-select: none;
+    user-select: none;
+}
+.b-color__e-input {
+    position: relative;
+    top: 50%;
+    display: block;
+    margin: -18px auto 0 auto;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+.b-color__e-color-info {
+    position: absolute;
+    top: 50%;
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+.b-color__e-color-info span {
+    display: inline-block;
+    padding: 3px 9px;
+    background: rgba(255, 255, 255, 0.5);
+}
+.b-color__e-action {
+    position: absolute;
+    top: 50%;
+    margin: 90px auto;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+.b-color__e-action a {
+    display: inline-block;
+    padding: 3px 9px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    text-decoration: none;
+}
+.b-color__e-action a:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.b-colors-container__m-vertical .b-color {
+    float: none;
+    min-width: 100%;
+    height: 200px;
+}
+.b-colors-container__m-vertical .b-color__e-input {
+    top: 20%;
+}
+.b-colors-container__m-vertical .b-color__e-color-info {
+    top: 20%;
+    margin: 40px auto;
+}
+.b-colors-container__m-vertical .b-color__e-action {
+    top: 20%;
+    margin: 90px auto;
+}
+.b-colors-container__m-vertical .b-color__e-input {
+    top: 20%;
+}

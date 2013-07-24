@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="colorsApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Colors</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="shortcut icon" href="favicon.png">
+</head>
+<body>
+
+    <div ng-controller="MainCtrl">
+        <div class="b-add-color" ng-click="addColor()">
+            <span>+</span>
+        </div>
+        <a href="{{baseUrl}}{{hash}}" class="b-scheme-link" ng-click="select($event)"><i class="icon-link"></i></a>
+        <div class="b-link-modal">
+            <input text class="b-clipboard-textarea" value="{{baseUrl}}{{hash}}">
+        </div>
+        <div class="b-colors-container">
+            <div class="b-color" ng-repeat="color in colors" style="{{color.getStyle(colors.length)}}" ng-dblclick="removeColor($index, $event)">
+                <input type="text" ng-model="color.hex" class="b-color__e-input" ng-dblclick="$event.stopPropagation()">
+
+                <div class="b-color__e-color-info">
+                    <span  ng-dblclick="$event.stopPropagation()">
+                        {{color.getRgbInfo()}}
+                    </span>
+                    <br>
+                    <span  ng-dblclick="$event.stopPropagation()">
+                        {{color.getHsvInfo()}}
+                    </span>
+                </div>
+
+                <div class="b-color__e-action">
+                    <a href="#" ng-dblclick="$event.stopPropagation()" ng-click="ligthen($index, $event)">lighten</a>
+                    <a href="#" ng-dblclick="$event.stopPropagation()" ng-click="darken($index, $event)">darken</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
